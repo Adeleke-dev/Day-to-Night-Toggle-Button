@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn {
+  position: relative;
+  width: 300px;
+  height: 120px;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #c4c4c4;
+  background-image: url(../images/day-bg.jpg);
+  background-size: cover;
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.toggle-btn .switch {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25),
+    inset 5px 0 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  cursor: pointer;
+}
+
+.toggle-btn .moon {
+  width: 85px;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  transform: translateY(200%);
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  z-index: 1;
+}
+
+.toggle-btn.active {
+  background-image: url(../images/night-bg.jpg);
+}
+.toggle-btn.active .switch {
+  transform: translateX(calc(300px - 120px));
+}
+.toggle-btn.active .moon {
+  transform: translateY(0);
+}
